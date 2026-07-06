@@ -1,8 +1,10 @@
 # Zazhytskyi_nosql_1
 
-tracks: 113999
+**tracks:** 113999
 
-Приклад документа для перевірки структури
+## Приклад документа для перевірки структури
+
+``` javascript
 {
   _id: ObjectId('6a4809b9221c951350e9f1d1'),
   track_id: '5vjLSffimiIP26QG5WcN2K',
@@ -32,3 +34,4 @@ tracks: 113999
     popularity_tier: 'high'
   }
 }
+```

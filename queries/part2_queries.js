@@ -1,8 +1,8 @@
 use("spotify");
 
 // Частина 2 — Запити до даних
-// Завдання 1. Треки для вечірки
 
+// Завдання 1. Треки для вечірки
 tracks = db.tracks.find({
     "audio_features.danceability": { $gt: 0.7 },
     "audio_features.energy": { $gt: 0.7 },
@@ -15,7 +15,6 @@ tracks = db.tracks.find({
 //print('Треки для вечірки:', tracks);
 
 // Завдання 2. Виконавці, у яких усі треки популярні
-
 artists = db.tracks.aggregate([
     { $match: { "popularity": { $gt: 60 } } },
     { $unwind: "$artists" },
@@ -46,7 +45,6 @@ artists = db.tracks.aggregate([
 //print('Виконавці, у яких усі треки популярні:', artists);
 
 // Завдання 3. Нетипові треки
-
 tracks = db.tracks.aggregate([
     {
         $group: {
@@ -84,7 +82,6 @@ tracks = db.tracks.aggregate([
 //print('Нетипові треки:', tracks);
 
 // Завдання 4: Треки для фонової роботи
-
 tracks = db.tracks.find({
     "audio_features.loudness": { $lt: -10 },
     "audio_features.speechiness": { $lt: 0.1 },
